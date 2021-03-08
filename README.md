@@ -1,10 +1,12 @@
-# ENGG_1340-Group_Project
+#   ENGG_1340-Group_Project
+#   ⚠️ Read the descriptions and instructions below carefully before executing the program. 
 
-1)Generation of random game sets or events
-2)Data structures for storing game status
-3)Dynamic memory management
-4)File input/output (e.g., for loading/saving game status)
-5)Program codes in multiple files
+
+1)  Generation of random game sets or events
+2)  Data structures for storing game status
+3)  Dynamic memory management
+4)  File input/output (e.g., for loading/saving game status)
+5)  Program codes in multiple files
 
 Group members:
 Senthil Kumar Sapnesh   (3035790850)
