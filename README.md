@@ -2,18 +2,16 @@
 #   ⚠️ Read the descriptions and instructions below carefully before executing the program. 
 
 
-1)  Generation of random game sets or events
-2)  Data structures for storing game status
-3)  Dynamic memory management
-4)  File input/output (e.g., for loading/saving game status)
-5)  Program codes in multiple files
-
 Group members:
 Senthil Kumar Sapnesh   (3035790850)
 Wu Kunhuan              (3035771634)
 
 Description of Game:
-A 3 in 1 game. List of sub-games below:
+A 3 in 1 game. User will input the number corresponding to the game to play it (The Main Menu). After entering games, user can press different buttons to start, read rules or others. They can also load game.
+Main Menu:
+Includes navigation to different games
+
+ List of sub-games below:
 1) Blackjack
 2) Crazy Eights
 3) 24 Calculation
