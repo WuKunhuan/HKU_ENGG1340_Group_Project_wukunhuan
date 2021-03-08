@@ -23,6 +23,12 @@ Description of each subgame
 Game will give 2 random starting cards to player. Player will play against computer.
 Goal of the game is to get a sum of 21 from all the cards at hand OR get higher total than computer.
 
+Features:
+A) Player plays against 1 AI
+B) If player gets exactly 21, bonus points are given
+C) Random cards are given each time (Element 1)
+D) Continous winning give bonus points
+
 
 
 
@@ -38,6 +44,7 @@ C) Each time player draws, they get a random cards (Element 1)
 D) Different functions in different file (Element 5)
 E) Using arrays (Element 2)
 F) Store points (Element 4)
+G) Player can choose to play against 1 or 2 AI, score received will vary
 
 
 
@@ -45,5 +52,7 @@ F) Store points (Element 4)
 Player will be shown some cards and they must try to form an expression with all the numbers using +,-,*,/ to form a total of 24.
 
 Features:
-A) Faster the player finishes, the more score they get
+A) If finished within a given time, player gets bonus points.
 B) Random number of cards and random cards (Element 1)
+C) Players can bet and difficulty varies depending on bet
+D) Time will be shown upon user input.
