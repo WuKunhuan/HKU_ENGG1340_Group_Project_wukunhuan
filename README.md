@@ -59,7 +59,7 @@
      To have a better understanding of this game, please have a look on this Youtube video:
      https://www.youtube.com/watch?v=LyyHt7NfBxI
 
-     ⭕️   Game rules:
+     ⭕️   Game rules
      -    This game uses 1 single suit or more complete suits of the playing cards.
      -    Each player gets 4 ~ 6 randomly selected cards from the suit in the beginning of the game. After that, they have to type in an expression which includes all of the given numbers exactly once, and one or more kinds of operators to make up the result of 24. There will be a possibility that a set of cards have no such solution of the expression. Players have to identify those cases correctly and choose to skip them (however, there will be a limit of chances for the player to skip a single question, so think it carefully before skipping). In case the player has skipped a non-solution question, some points will be given and the remaining chances to skip the question will noe be reduced.
      -    For each correct expression formed by the player, a certain point will be given based on the time used for the question. The shorter the time used, the higher points for that question gained, so the Goal is to solve the question correctly and fast.
@@ -69,7 +69,7 @@
      ②  The player has finished questions correctly continuously for at least 3 times
      ③  The player has finished questions correctly within a specific time continuously for at least 3 times
 
-     ⭕️   Features:
+     ⭕️   Features
      -    This game has functions that can be used to generate random numbers, e.x. dealing cards       (Code requirement 1)
      -    This game uses arrays, vectors and so on to store datas                                       (Code requirement 2)
      -    This game uses dynamic memory management to store datas                                       (Code requirement 3)
