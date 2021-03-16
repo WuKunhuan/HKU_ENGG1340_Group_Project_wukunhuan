@@ -10,7 +10,7 @@
     This is a 2 in 1 game.
     Text-game type: Text-based playing cards' puzzle games.
     Players will input the number corresponding to the game to play it in the Main Menu (navigation to different games). After entering games, players can again input different numbers to start, read rules, load previous game progress and so on.
-    In case players choose to start the game, related game interfaces will be displayed. After finishing each set of an individual game or both games, a report of the player's overall score will be produced while a ranking table is available to see from the user.
+    In case players choose to start the game, related game interfaces will be displayed. After finishing each set of an individual game or both games, a report of the player's overall score will be produced for the player.
 
 
 
