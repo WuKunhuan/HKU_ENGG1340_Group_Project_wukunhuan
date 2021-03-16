@@ -14,13 +14,13 @@
 
 
 
-##   ⭐️  List of sub-games
+##   ⭐️  List of subgames
      1)  Crazy Eights
      2)  Make 24
 
 
 
-##   ⭐️  Description of each subgame
+##   ⭐️  Descriptions of each subgame
 
 ###  Crazy Eights
      A simple version of Uno with playing cards. In this card game, the player will play against Artificial Intelligence (AI).
