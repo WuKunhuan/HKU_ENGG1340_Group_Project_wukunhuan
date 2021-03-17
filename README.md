@@ -23,17 +23,17 @@
 ##   ⭐️  Descriptions of each subgame
 
 ###  Crazy Eights
-     A simple version of Uno with playing cards. In this card game, the player will play against Artificial Intelligence (AI).
-     To have a better understanding of this game, please have a look of the following Youtube Video:
-     https://www.youtube.com/watch?v=iDQjn3k76Mw
+     A playing cards version of Uno. In this card game, the player will play against Artificial Intelligence (AI).
+     
 
      ⭕️   Game rules
      -    This game uses 1 single suit or more complete suits of the playing cards.
-     -    Each player gets 5 randomly selected cards from the suit in the beginning of the game. After dealing 5 cards to each player, another card (Initial Card) will be uncovered from the rest of the pile, and a player will be selected to start discarding his/her cards.
-     -    Each time, a player can only discard one card that has either the same rank or the same suit with the Initial Card (if the player is playing the first card of the whole set) or the card played by the last player. When the player has a card "8", he/she can also play that without following the requirement of the same rank/suit. In that case, he/her can choose a suit (similar to choosing which colour after playing a wildcard in Uno) that will be assigned to the next player, this means the next player can only play another 8 or a newly assigned suit's card.
-     -    In case no card is available to be played by the player (meets the requirement of the same rank/suit) in a single turn, the player has to pick up cards from the rest of the pile one by one, before he/she has a card that is able to be played. When a single suit is all taken, a new random set will be used to continue.
+     -    Each player gets 5/7 randomly selected cards from the suit in the beginning of the game. After dealing 5/7 cards to each player, another card (Initial Card) will be uncovered from the rest of the pile, and a player will be selected to start discarding his/her cards.
+     -    Each time, a player can only discard one card that has either the same rank or the same suit with the Initial Card (if the player is playing the first card of the whole set) or the card played by the last player. When the player has a card "8", he/she can also play that without following the requirement of the same rank/suit. In that case, he/her can choose a suit (similar to choosing which colour after playing a wildcard in Uno) that will be assigned to the next player, this means the next player can only play the newly assigned suit's card or the previous number (the number before the 8 was played).
+     -    In case no card is available to be played by the player (meets the requirement of the same rank/suit) in a single turn, the player has to draw a card from the rest of the pile.
      -    The Goal is to get rid of all your cards before AI, and that is called winning a single round. For each round, in case the player has won that round, he/she will get certain points according to the total remaining cards of the AI. The more cards AI is remaining, the more points the player is getting. In contrast, if any AI finished the cards before the player, points will be deducted from the player according to the total remaining cards of the player.
-     -    Players can choose to play different rounds, e.x. 2, 3 or 5 rounds in a complete game set, points from each game round will be accumulated to have the final point. Players can also choose to play against either 1 or 3 AI, and the calculation of points will be varied.
+     -    If both AI and player cannot finish their cards before the draw piles becomes empty, the round will be a draw.
+     -    Players can choose to play different rounds, e.x. 2, 3 or 5 rounds in a complete game set, points from each game round will be accumulated to have the final point. Players can also choose to play against either 1 or 2 AI, and the calculation of points will be varied.
      -    Bonus points will be available for specific achievements in this game, for example:
      ①  The player finishes all cards before certain turns in a round
      ②  The player win continuously for at least 3 times
