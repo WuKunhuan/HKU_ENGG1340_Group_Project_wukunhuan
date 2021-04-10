@@ -84,4 +84,7 @@
      For more detail, please refer to the game help page in the program. 
 
 ## Non-Standard C/C++ Libraries:
+
+## Academy server used for testing
+    Academy11
     
