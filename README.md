@@ -7,16 +7,23 @@
 
 
 ##   ⭐️  Description of the project
-    This is a 2 in 1 game.
-    There are a total of 5 rounds where the player can choose to play Crazy Eights or 24 Calculation.
-    When player enters the main menu, they will be asked to input their name. The game will check if a save file exists and if so will prompt player if they want to continue from where they left off or want to start a new game.
-    After round 3, players will play a Slot Machine which gives them a chance to double their bet score.
-    Players will input the number corresponding to the game to play it in the Main Menu (navigation to different games). After entering games, players can again input different numbers to start, read rules.
-    After 5 rounds, a stats file with the player's name will be created with the stats of the game that they played.
+    This project is a 2 in 1 game.
+    There are a total of 5 rounds. In each round, the player can choose to play either Crazy Eights or 24 Calculation.
+    When player enters the main menu, they will be asked to input their name. The game will check if a [Game saved] file exists and if so will prompt player if they want to continue from where they left off or want to start a new game.
+    After Round 2 and Round 4, players will play a Slot Machine which gives them a chance to double their bet score.
+    Players will input the number corresponding to the game in the Main Menu to play it (navigation to different games). After entering games, players can again input different numbers to start the game, read the rules, and choosing the game mode.
+    After 5 rounds, a file started with [Game result] then with the player's name will be created with their performance of the game that they played. Before each round, the player can also choose to save his or her game progress, and enter it again in the future.
   
 ## ⭐️ Compilation and execution instructions
+   
+    First, download all the files into a single folder and open a terminal for that folder. 
+    Then, enter the following 2 commands in the terminal one by one: 
+
     make MainMenu
     ./MainMenu
+
+    After these steps, a terminal interface of the game will be available. Follow the game instructions in the game, and providing correct inputs for the normal operation. Always save the game progress to avoid the game crash for wrong inputs mistakenly sometimes. Please refer to the Sample Gamerun file for a better sense of how the game interface looks like. 
+    Sometimes, if nothing is coming up in the game, just return one more blank line, and then it should be OK (the getline function sometimes let users to enter again in case the previous enter is nothing). Have fun with both subgames and try different game modes  :)
 
 
 
@@ -34,22 +41,23 @@
 
      ⭕️   Game rules
      -    This game uses all cards in a deck of plaing cards except for the Joker cards.
-     -    Each player gets 7 randomly selected cards from the deck in the beginning of the game. After dealing 7 cards to each player, another card (Opening Card) will be uncovered from the rest of the pile, and the player will start discarding his/her cards first.
-     -    Each time, a player can only discard one card that has either the same rank or the same suit with the Top Card. When the player has a card "8", he/she can also play that without following the requirement of the same rank/suit. In that case, he/she can choose a suit (similar to choosing which colour after playing a wildcard in Uno) that will be assigned to the next player, this means the next player can only play the newly assigned suit's card or the previous number (the number before the 8 was played).
-     -    In case no card is available to be played by the player (meets the requirement of the same rank/suit) in a single turn, the player has to draw a card from the rest of the pile.
-     -    The Goal is to get rid of all your cards before AI, and that is called winning a single round. For each round, in case the player has won that round, he/she will get certain points according to the total remaining from the Draw Pile. The less number of cards drawed, the more points the player is getting. In contrast, if any AI finished the cards before the player, player will not get any points.
-     -    If both AI and player cannot finish their cards before the draw piles becomes empty, the player with the least number of cards will win. If all players have the same number of cards, it is a draw.
-     -    Players can choose to play different rounds, e.x. 2, 3 or 5 rounds in a complete game set, points from each game round will be accumulated to have the final point. Players can also choose to play against either 1 or 2 AI, and the calculation of points will be varied.
+     -    Each player gets 7 randomly selected cards from the Deck in the beginning of the game. After dealing 7 cards to each player, another card (Opening Card) will be uncovered from the rest of the pile, and the player will start discarding his/her cards first.
+     -    Each time, the player can only discard one card that has either the same rank or the same suit with the Top Card, by entering the integer Card ID provided in the interface. When the player has a card "8", he/she can also play that without following the requirement of the same rank/suit. In that case, he/she can choose a new suit (similar to choosing which colour after playing a wildcard in Uno) that will be assigned to the current top card, this means the next player can only play the newly assigned suit's card or the previous number (the number before the 8 was played).
+     -    In case no card is available to be played by the player (meets the requirement of the same rank/suit) in a single turn, the player has to draw a card by entering -1 from the rest of the pile.
+     -    Get rid of all your cards before AI to win. For each round, in case the player wins, he/she will get certain points according to the total remaining from the Deck. The less number of cards drawed, the more points the player is getting. In contrast, if any AI finished the cards before the player, player will not get any point.
+     -    If both AI and player cannot finish their cards before the Deck becomes empty, the player with the least number of cards will win. If players have the same number of cards, it is a draw.
+     -    Players can choose to play against either 1 AI or 2 AIs, and the calculation of points will be varied. In detail, for 1 AI the maximum score available is 50 for the round, but for 2 AIs, the maximum score will be 100 for the round. When the round is finished a scoreboard will be displayed at the end. 
+
+
 
      ⭕️   Features
-     -    This game has chooses random cards each time when a cards needs to be drawed or the player/AI piles are being generating       (Code requirement 1)
-     -    This game uses struct to store the player data in input/output files. Vectors are used to store player and AI card piles       (Code requirement 2)
-     -    This game uses Vectors to store the Player's and AIs' cards                                                                    (Code requirement 3)
-     -    This game supports loading/saving and outputting the a file called "playerstats.txt" after 5 rounds                            (Code requirement 4)
-     -    This game has a main menu file, a crazy eights file and 24 calculation game file. (3 different game files in total)            (Code requirement 5)
-     -    This game is simple and fun. A well-looked user interface is available for players to interact with AIs and play cards like normal online games.
-     -    Additional features beyond the original game rules, e.x. bonus points are implemented to make this game more creative.
+     -    This game distributes 7 random cards to each of the player in the beginning of the round, also chooses random cards each time from the Deck when a card is needed to be drawn or the player / AI. This meets the code requirement 1: Generation of random game sets or events. 
+     -    This game uses structs to store the player data in [Game saved] and [Game result] files. After that, when reloading games, the corresponding data will be stored in the struct in the main menu program. This meets the code requirement 2: Data structures for storing game status. 
+     -    This game uses Vectors to store the Player's and AIs' piles, and processes the card adding or playing process when it comes to the player/AI's turn. This meets the code requirement 3: Dynamic memory management. 
+     -    This game supports loading / saving game progress, also outputting the game result after all 5 rounds, together with the [Game saved] and [Game result] files. Additionally, this game supports storing multiple users' game progress and result. This meets the code requirement 4: File input/output. 
+     -    This game is one of the subgames in the 2-in-1 main menu. Under the main menu's program, there are both program files (.cpp) for the subgames. When compiling, it will use all the cpp files to generate the MainMenu program.  This meets the code requirement 5: Program codes in multiple files. 
 
+     -    This game is simple and fun. You can choose to play with either 1 AIs or 2 AIs. A well-looked user interface is available for players to interact with AIs and play cards like normal online games.
      
 
 
@@ -58,33 +66,38 @@
 
 
 ###  Make 24
-     Form an expression with all the given value of each playing card using +, -, *, /, (). (in some modes also include ^, / and %) to form a result of 24.
-     To have a better understanding of this game, please have a look on this Youtube video:
+    Form an expression with all the given value of each playing card using +, -, *, /, (). (in some modes also include ^, / and %) to form a result of 24. To have a better understanding of this game, please have a look on this Youtube video:
      https://www.youtube.com/watch?v=LyyHt7NfBxI
 
      ⭕️   Game rules
-     -    This game uses 1 single suit or more complete suits of the playing cards.
-     -    Each player gets 4 ~ 6 randomly selected cards from the suit in the beginning of the game. After that, they have to type in an expression which includes all of the given numbers exactly once, and one or more kinds of operators to make up the result of 24. There will be a possibility that a set of cards have no such solution of the expression. Players have to identify those cases correctly and choose to skip them (however, there will be a limit of chances for the player to skip a single question, so think it carefully before skipping). In case the player has skipped a non-solution question, some points will be given and the remaining chances to skip the question will not be reduced.
-     -    For each correct expression formed by the player, a certain point will be given based on the time used for the question. The shorter the time used, the higher points for that question gained, so the Goal is to solve the question correctly and fast.
-     -    A total set of the game includes certain rounds, e.x. 5, 10 or 20, and the player can choose to play different rounds. Points from each game round will be accumulated to have the final point. Players can also choose to play with either 4, 5 or 6 random selected cards or a mix of them in the game, and the calculation of points will be varied.
+    -    Each time the player gets 4 ~ 6 randomly selected cards, based on his or her game option. After that, the player has to type in an expression which includes all of the given numbers exactly once, and one or more kinds of operators to make up the result of 24. All the questions given are solvable.
+     -    For each correct expression formed by the player, a certain point will be given based on the time used for the question, minimum 5 points and maximum 20 points. The shorter the time used, the higher points for that question gained, so the Goal is to solve the question correctly and fast at the same time.
+     -    A complete round consists of 5 questions. Points from each question will be accumulated to have the final point for the round, this means the maximum score available for a single round is 20 * 5 = 100. When the round is finished a scoreboard will be displayed at the end, consisting the overall score and the overall grade for the round. 
+
      -    Bonus points will be available for specific achievements in this game, for example:
      ①  The player has finished questions correctly within a specific time
      ②  The player has finished questions correctly continuously for at least 3 times
      ③  The player has finished questions correctly within a specific time continuously for at least 3 times
 
      ⭕️   Features
-     -    This game has functions that can be used to generate random numbers, e.x. dealing cards       (Code requirement 1)
-     -    This game uses arrays, vectors and so on to store datas                                       (Code requirement 2)
-     -    This game uses dynamic memory management to store datas                                       (Code requirement 3)
-     -    This game supports loading/saving the game status with certain functions                      (Code requirement 4)
-     -    This game has different cpp files to store the program for different functions                (Code requirement 5)
-     -    This game is simple and fun. A well-looked user interface is available for players to see their poker cards and write the expression.
-     -    Additional features beyond the original game rules, e.x. bonus points, more operators, more cards, timer, are implemented to make this game more creative.
+    -    This game selects random question sets and assign random suits to the given cards provided in the calculation. This meets the code requirement 1: Generation of random game sets or events. 
+     -    This game uses structs to store the player data in [Game saved] and [Game result] files. After that, when reloading games, the corresponding data will be stored in the struct in the main menu program. This meets the code requirement 2: Data structures for storing game status. 
+     -    This game uses Vectors to store the numbers and operators provided by the player in the game. After that, in order to figure out whether the calculation result is 24, this game makes good use of the push_back (), pull_back (), back (), etc. vector functions to analyse the expression string entered by the player correctly. This meets the code requirement 3: Dynamic memory management. 
+     -    This game supports loading / saving game progress, also outputting the game result after all 5 rounds, together with the [Game saved] and [Game result] files. Additionally, this game supports storing multiple users' game progress and result. Specially for the 24 calculation subgame, there are question banks provided in advance to store those questions that has solutions and load them for random questions in the game. This meets the code requirement 4: File input/output. 
+     -    This game is one of the subgames in the 2-in-1 main menu. Under the main menu's program, there are both program files (.cpp) for the subgames. When compiling, it will use all the cpp files to generate the MainMenu program.  This meets the code requirement 5: Program codes in multiple files. 
+
+     -    This game is simple and fun, popular among Chinese kids. You can choose different game modes, calculating the traditional 4 numbers, also 5 numbers and 6 numbers' question sets. The more you practice with it, the higher the score will be! 
+
+
 
      For more detail, please refer to the game help page in the program. 
 
 ## Non-Standard C/C++ Libraries:
-
+    #include <time.h>
+    #include <limits>
+    #include <algorithm>
+    #include <unistd.h>
+    #include <chrono>
 ## Academy server used for testing
-    Academy11
+    academy21 server
     
