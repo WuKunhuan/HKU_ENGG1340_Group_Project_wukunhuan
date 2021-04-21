@@ -1,0 +1,651 @@
+ ==========================================================
+||              WELCOME TO THE 2-IN-1 GAME                ||
+ ==========================================================
+Please enter your name: Keff
+
+ ==========================================================
+||                    Old save found!                     ||
+||       Would you like to continue from last save?       ||
+||        Enter 1 for Yes or anything else for No         ||
+ ==========================================================
+Your choice: 1
+
+(Note: The interface is cleared)
+
+ ========================================================== 
+||  Welcome back Keff!                                    ||
+||                                                        ||
+||  Current round:      4                                 ||
+||  Current score:      100                               ||
+ ========================================================== 
+Enter anything to continue the game ... 0
+
+(Note: The interface is cleared)
+
+(Note: The player with name Keff has just saved the game progress after finishing the Round 3, so now the game will start with Round 4)
+
+ ================================
+||     This is Round 4 / 5!     ||
+ ================================
+ ==========================================================
+||           Which game would you like to play?           ||
+||                                                        ||
+||          To play Crazy Eights, please enter 1          ||
+||         To play 24 Calculation, please enter 2         ||
+||        To quit and save progress, please enter 3       ||
+ ==========================================================
+Your choice: 1
+
+(Note: The interface is cleared)
+
+ ==========================================================
+||  Hi there! Welcome to the Crazy Eights!                ||
+||  Enter 1:  Play                                        ||
+||  Enter 2:  Read rules and Play                         ||
+ ==========================================================
+Your option: 1
+
+(Note: The interface is cleared)
+
+ ==========================================================
+||  Enter number of AIs you'd like to play with (1 or 2)  ||
+ ==========================================================
+Your choice: 1
+
+(Note: The interface is cleared)
+
+ ==========================================================
+||  Before this round the score is:        100            ||
+ ==========================================================
+Enter anything to continue...0
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is 10\u2660 ||
+ ========================
+ ===================
+||  Deck size: 37  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+||       2)  5\u2665        3)  7\u2665                   ||
+||       4)  9\u2663        5)  J\u2663                   ||
+||       6)  K\u2666                                      ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 0
+
+(Note: \u2660, \u2665, \u2663, \u2666 represent SPADES, HEARTS, CLUBS and DIAMONDS respectively)
+
+(Note: The interface is cleared)
+
+ ==========================================================
+|| K\u2666  is an invalid card. Please choose another to play  ||
+ ==========================================================
+Your choice: -1
+You drew  8\u2666
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is 10\u2660 ||
+ ====================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 plays:  2\u2660
+AI_1 has 6 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is 2\u2660 ||
+ ========================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+||       2)  5\u2665        3)  7\u2665                   ||
+||       4)  9\u2663        5)  J\u2663                   ||
+||       6)  K\u2666        7)  8\u2666                   ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 7
+ ==========================================================
+||  You have played a WILD CARD                           ||
+||  Please choose the suit that you want                  ||
+||  0 for SPADES          1 for HEARTS                    ||
+||  2 for CLUBS           3 for DIAMONDS                  ||
+ ==========================================================
+Your choice: 3
+The suit has been changed into: DIAMONDS!
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is 2\u2666 ||
+ ====================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 plays:  Q\u2666
+AI_1 has 5 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is Q\u2666 ||
+ ========================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+||       2)  5\u2665        3)  7\u2665                   ||
+||       4)  9\u2663        5)  J\u2663                   ||
+||       6)  K\u2666                                      ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 6
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is K\u2666 ||
+ ====================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 plays:  J\u2666
+AI_1 has 4 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is J\u2666 ||
+ ========================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+||       2)  5\u2665        3)  7\u2665                   ||
+||       4)  9\u2663        5)  J\u2663                   ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 5
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is J\u2663 ||
+ ====================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 plays:  10\u2663
+AI_1 has 3 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is 10\u2663 ||
+ ========================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+||       2)  5\u2665        3)  7\u2665                   ||
+||       4)  9\u2663                                      ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 4
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is 9\u2663 ||
+ ====================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 plays:  7\u2663
+AI_1 has 2 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is 7\u2663 ||
+ ========================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+||       2)  5\u2665        3)  7\u2665                   ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 3
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is 7\u2665 ||
+ ====================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 plays:  6\u2665
+AI_1 has 1 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is 6\u2665 ||
+ ========================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+||       2)  5\u2665                                      ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 2
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is 5\u2665 ||
+ ====================
+ ===================
+||  Deck size: 36  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 drew a card
+AI_1 has 2 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is 5\u2665 ||
+ ========================
+ ===================
+||  Deck size: 35  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663        1)  5\u2660                   ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 1
+
+(Note: The interface is cleared)
+
+ ====================
+||  Top card is 5\u2660 ||
+ ====================
+ ===================
+||  Deck size: 35  ||
+ ===================
+ ==========================================================
+||                   It is AI_1's turn!                   ||
+ ==========================================================
+AI_1 plays:  8\u2663
+AI_1 has played a WILD CARD. IT has chosen the suit: CLUBS
+The suit has been changed into: CLUBS!
+
+AI_1 has 1 cards left
+
+(Note: The interface is cleared)
+
+ ========================
+||  Opening card is 5\u2663 ||
+ ========================
+ ===================
+||  Deck size: 35  ||
+ ===================
+ ==========================================================
+||                    It is YOUR turn!                    ||
+ ==========================================================
+
+ ==========================================================
+||  Your cards are:                                       ||
+||       0)  3\u2663                                      ||
+ ==========================================================
+ ==========================================================
+||  Your turn. Please play a valid card or                ||
+||  enter -1 to draw a card from the Draw pile            ||
+ ==========================================================
+Your choice: 0
+
+(Note: The interface is cleared)
+
+ ========================================================== 
+||  YOU WIN as you have played all of your cards!         ||
+ ========================================================== 
+
+(Note: The interface is cleared)
+
+Here is Keff's scoreboard for this round: 
+ ========================================================== 
+||         Game Mode:            1 AIs                    ||
+||    Cards remained:               35                    ||
+||       Game status:         YOU WIN!                    ||
+||                                                        ||
+||     Overall Score:               49                    ||
+ ========================================================== 
+Enter anything to end this round...0
+
+(Note: The interface is cleared)
+
+ ========================================================== 
+||  After this round the score is:       149              ||
+ ==========================================================  
+
+
+ ========================================================== 
+||     Round over, thanks for playing Crazy Eights!       ||
+ ========================================================== 
+Enter anything to go back to the main menu...0  
+
+(Note: The interface is cleared)
+
+ ========================================================== 
+||                Let us have a rest ...                  ||
+||                                                        ||
+||               Welcome to Slot Machine!                 ||
+|| You have a chance to double your bet or lose your bet. ||
+||                                                        ||
+||    If all 3 numbers are same, then CONGRATULATIONS,    ||
+||                 otherwise you LOSE                     ||
+ ========================================================== 
+You have got a 10 bonus score  :)  have fun with the slot machine!
+Enter amount of score to bet (Between 1 and 159): 6
+
+(Note: After Round 2 and Round 4, there are slot machines to give you a chance to bet and double your current score)
+
+ ================================= 
+||  Your numbers are: 1  1  1    ||
+ ================================= 
+ ========================================================== 
+||        CONGRAGULATIONS YOU DOUBLED YOUR BET!!!         ||
+ ========================================================== 
+ ========================================================== 
+||  Current score:    165                                 ||
+ ========================================================== 
+Enter anything to continue the next round ...0   
+
+(Note: The interface is cleared)
+
+ ================================ 
+||     This is Round 5 / 5!     ||
+ ================================ 
+ ========================================================== 
+||           Which game would you like to play?           ||
+||                                                        ||
+||          To play Crazy Eights, please enter 1          ||
+||         To play 24 Calculation, please enter 2         ||
+||        To quit and save progress, please enter 3       ||
+ ========================================================== 
+Your choice: 2
+
+(Note: The interface is cleared)
+
+ ========================================================== 
+||  Hi there! Welcome to the 24_Calculation!              ||
+||  Enter 1:  Play                                        ||
+||  Enter 2:  Read rules and Play                         ||
+ ========================================================== 
+Your option: 2
+
+(Note: The interface is cleared)
+
+ ========================================================== 
+||                Rules of 24_Calculation                 ||
+||                                                        ||
+||          A few numbers will be given to you!           ||
+||      Your task: Form an expression to make it 24,      ||
+||          with each number used exactly once,           ||
+||       basic operators (+, -, *, /) and brankets.       ||
+||                                                        ||
+||      Decimals can be involved in the calculation!      ||
+||       Avoid negative numbers in the calculation!       ||
+ ========================================================== 
+Enter anything to continue...0
+
+(Note: The interface is cleared)
+
+ ========================================================== 
+||  Before this round the score is:      165              ||
+ ========================================================== 
+Enter anything to continue...0
+
+Hi 0, Please select your game mode:  
+ ========================================================== 
+||     Enter 1:  Calculate  4  numbers                    ||
+||     Enter 2:  Calculate  5  numbers                    ||
+||     Enter 3:  Calculate  6  numbers                    ||
+ ========================================================== 
+Your option: 1
+
+(Note: The interface is cleared)  
+
+ ========================================================== 
+||                     24_Calculation                     ||
+||                 Calculate  4  numbers                  ||
+||                                                        ||
+|| ?   Example:                                           ||
+|| Given numbers:                   3\u2660   4\u2665   9\u2663   Q\u2666     ||
+|| Enter your calculation:          3 * 9 - 12 / 4        ||
+||                                                        ||
+|| Note: A, J, Q, K  value  1, 11, 12, 13 individually.   ||
+|| There are 5 questions! Solve as fast as you can!       ||
+ ========================================================== 
+Enter anything to start...0
+
+(Note: The interface is cleared)  
+
+ ========================================================== 
+|| ?   Question  1                                        ||
+||     Given numbers:               4\u2665   8\u2660   9\u2663   9\u2666     ||
+ ========================================================== 
+       Enter your calculation:       8 * (4 - 9 / 9)
+Division: 9 / 9 = 1
+Subtraction: 4 - 1 = 3
+Multiplicaton: 8 * 3 = 24
+
+\u2714\ufe0f  You got it! Well done!              Time used: 40000 ms
+   Points for this question: 20        Points accumulated: 20
+Enter anything to continue...0
+
+(Note: The interface is cleared)  
+
+ ========================================================== 
+|| ?   Question  2                                        ||
+||     Given numbers:               5\u2660   7\u2663   7\u2663   J\u2660     ||
+ ========================================================== 
+       Enter your calculation:       5 * 7 - 7 - 11
+Multiplicaton: 5 * 7 = 35
+Subtraction: 35 - 7 = 28
+Subtraction: 28 - 11 = 17
+
+\u2716\ufe0f  Emm... The result is 17 but not 24  :( 
+   Points for this question: 0        Points accumulated: 20
+Enter anything to continue...0
+
+(Note: The interface is cleared)  
+
+ ========================================================== 
+|| ?   Question  3                                        ||
+||     Given numbers:               3\u2660   8\u2660   Q\u2663   K\u2663     ||
+ ========================================================== 
+       Enter your calculation:       3 * 8
+
+\u2716\ufe0f  You haven't use the given numbers! Please use all of them exactly once
+   Points for this question: 0        Points accumulated: 20
+Enter anything to continue...0
+
+ ========================================================== 
+|| ?   Question  4                                        ||
+||     Given numbers:               3\u2665   6\u2665   K\u2666   K\u2660     ||
+ ========================================================== 
+       Enter your calculation:       13 + 13 - 6 / 3
+Addition: 13 + 13 = 26
+Division: 6 / 3 = 2
+Subtraction: 26 - 2 = 24
+
+\u2714\ufe0f  You got it! Well done!              Time used: 6000 ms
+   Points for this question: 15        Points accumulated: 35
+Enter anything to continue...0
+
+(Note: The interface is cleared)  
+
+ ========================================================== 
+|| ?   Question  5                                        ||
+||     Given numbers:               A\u2660   5\u2663   Q\u2665   Q\u2666     ||
+ ========================================================== 
+       Enter your calculation:       5 - 12 + 12 + 1
+Subtraction: 5 - 12 = -7
+Negative numbers detected! 
+
+\u2716\ufe0f  Sorry, please get rid of negative numbers in the calculation! 
+   Points for this question: 0        Points accumulated: 35
+Enter anything to continue...0
+  
+(Note: The interface is cleared)  
+
+Here is Keff's scoreboard for this round: 
+ ========================================================== 
+||         Game Mode:       Calculate 4 numbers           ||
+||         Correct #:                2                    ||
+||              Time:       100000  ms                    ||
+||        Max.streak:                1                    ||
+||          Min.time:         4000  ms                    ||
+||                                                        ||
+||     Overall Score:               35                    ||
+||     Overall Grade:                C                    ||
+ ========================================================== 
+Enter anything to end this round...0
+
+(Note: The interface is cleared)    
+
+ ========================================================== 
+||  After this round the score is:       200              ||
+ ========================================================== 
+Enter anything to continue...0
+ 
+
+ ========================================================== 
+||     Round over, thanks for playing 24_Calculation!     ||
+ ========================================================== 
+Enter anything to go back to the main menu...0
+
+(Note: The interface is cleared) 
+
+ ========================================================== 
+||                       GAME OVER                        ||
+||                  Thanks for playing!                   ||
+ ========================================================== 
+Name: Keff
+Score: 200
+
+Your game statistics can be found in "[Game result]  Keff.txt" !
+Have a good day! 
+
+
+Enter anything to quit ...0
+
+(Now the game is quit. You can reload your game after entering the same name of your previous progress when restarting the game by entering the ./MainMenu command, in case you have just saved your progress between the rounds and quit. By using a new name when start again, a pair of new progress and result files will be created, so there will be no collisions and you can still continue the progress with another name ID). 
+
+
+
+
+
+
