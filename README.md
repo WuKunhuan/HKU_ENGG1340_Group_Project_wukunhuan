@@ -56,6 +56,7 @@
      -    This game uses Vectors to store the Player's and AIs' piles, and processes the card adding or playing process when it comes to the player/AI's turn. This meets the code requirement 3: Dynamic memory management. 
      -    This game supports loading / saving game progress, also outputting the game result after all 5 rounds, together with the [Game saved] and [Game result] files. Additionally, this game supports storing multiple users' game progress and result. This meets the code requirement 4: File input/output. 
      -    This game is one of the subgames in the 2-in-1 main menu. Under the main menu's program, there are both program files (.cpp) for the subgames. When compiling, it will use all the cpp files to generate the MainMenu program.  This meets the code requirement 5: Program codes in multiple files. 
+     -    The cards in player's hand and other statements print in a typewriter format.
 
      -    This game is simple and fun. You can choose to play with either 1 AIs or 2 AIs. A well-looked user interface is available for players to interact with AIs and play cards like normal online games.
      
@@ -92,6 +93,11 @@
 
      For more detail, please refer to the game help page in the program. 
 
+## Slot machine
+    - After rounds 2 and 4, a slot machine minigame will appear. Players can bet a portion of their score in this game to try their luck to double their bet. The game will roll 3 random numbers and if all the 3 numbers match, the player's bet will be doubled. Otherwise the bet will be deducted from the score. 
+    
+    
+    
 ## Non-Standard C/C++ Libraries:
     #include <time.h>
     #include <limits>
