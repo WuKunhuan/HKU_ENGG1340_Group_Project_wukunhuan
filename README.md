@@ -11,8 +11,8 @@
     There are a total of 5 rounds. In each round, the player can choose to play either Crazy Eights or 24 Calculation.
     When player enters the main menu, they will be asked to input their name. The game will check if a [Game saved] file exists and if so will prompt player if they want to continue from where they left off or want to start a new game.
     After Round 2 and Round 4, players will play a Slot Machine which gives them a chance to double their bet score.
-    Players will input the number corresponding to the game in the Main Menu to play it (navigation to different games). After entering games, players can again input different numbers to start the game, read the rules, and choosing the game mode.
-    After 5 rounds, a file started with [Game result] then with the player's name will be created with their performance of the game that they played. Before each round, the player can also choose to save his or her game progress, and enter it again in the future.
+    Players will input the number corresponding to the game in the Main Menu to play it (navigation to different games). After entering games, players can again input different numbers to start the game, read the rules, and choose the game mode.
+    After 5 rounds, a file with title starting with [Game result] then with the player's name will be created with their performance of the game that they played. Before each round, the player can also choose to save his or her game progress, and enter it again in the future.
   
 ## ⭐️ Compilation and execution instructions
    
@@ -22,7 +22,7 @@
     make MainMenu
     ./MainMenu
 
-    After these steps, a terminal interface of the game will be available. Follow the game instructions in the game, and providing correct inputs for the normal operation. Always save the game progress to avoid the game crash for wrong inputs mistakenly sometimes. Please refer to the Sample Gamerun file for a better sense of how the game interface looks like. 
+    After these steps, a terminal interface of the game will be available. Follow the game instructions in the game for the normal operation. Always save the game progress to avoid loss of progress from accidental crashes. Please refer to the Sample Gamerun file for a better sense of how the game interface looks like. 
     Sometimes, if nothing is coming up in the game, just return one more blank line, and then it should be OK (the getline function sometimes let users to enter again in case the previous enter is nothing). Have fun with both subgames and try different game modes  :)
 
 
@@ -99,11 +99,11 @@
     
     
 ## Non-Standard C/C++ Libraries:
-    #include <time.h>
+    #include <time.h> - Used for 24 Calculation time based scoring system
     #include <limits>
     #include <algorithm>
-    #include <unistd.h>
-    #include <chrono>
+    #include <unistd.h> - Used in print statements like a typewriter
+    #include <chrono> - Used for 24 Calculation time based scoring system
 ## Academy server used for testing
     academy21 server
     
