@@ -24,6 +24,10 @@
 
     After these steps, a terminal interface of the game will be available. Follow the game instructions in the game for the normal operation. Always save the game progress to avoid loss of progress from accidental crashes. Please refer to the Sample Gamerun file for a better sense of how the game interface looks like. 
     Sometimes, if nothing is coming up in the game, just return one more blank line, and then it should be OK (the getline function sometimes let users to enter again in case the previous enter is nothing). Have fun with both subgames and try different game modes  :)
+    
+    After finishing the game, if needed you can type in the following command to clear the .o files
+    make clean
+    
 
 
 
@@ -59,6 +63,7 @@
      -    The cards in player's hand and other statements print in a typewriter format.
 
      -    This game is simple and fun. You can choose to play with either 1 AIs or 2 AIs. A well-looked user interface is available for players to interact with AIs and play cards like normal online games.
+     -    The terminal will clear itself after each card is played to make it easier for the player to see what is happening.
      
 
 
@@ -88,6 +93,7 @@
      -    This game is one of the subgames in the 2-in-1 main menu. Under the main menu's program, there are both program files (.cpp) for the subgames. When compiling, it will use all the cpp files to generate the MainMenu program.  This meets the code requirement 5: Program codes in multiple files. 
 
      -    This game is simple and fun, popular among Chinese kids. You can choose different game modes, calculating the traditional 4 numbers, also 5 numbers and 6 numbers' question sets. The more you practice with it, the higher the score will be! 
+     -    The terminal will clear itself after each question to make it easier for the player to see what is happening.
 
 
 
@@ -105,5 +111,4 @@
     #include <unistd.h> - Used in print statements like a typewriter
     #include <chrono> - Used for 24 Calculation time based scoring system
 ## Academy server used for testing
-    academy21 server
-    
+    Latest test was done on Academy11 server, but tests were also done on Academy21 server.
