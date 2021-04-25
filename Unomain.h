@@ -1,5 +1,5 @@
-#ifndef FUNC_H
-#define FUNC_H
+#ifndef UNOMAIN_H
+#define UNOMAIN_H
 
 #include <iostream>
 #include <string>
