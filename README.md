@@ -112,3 +112,6 @@
     #include <chrono> - Used for 24 Calculation time based scoring system
 ## Academy server used for testing
     Latest test was done on Academy11 server, but tests were also done on Academy21 server.
+   
+## Special note
+    Git commit comments were made in the extended description part of each commit for files
