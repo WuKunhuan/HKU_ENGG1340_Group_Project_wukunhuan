@@ -24,7 +24,7 @@ struct Savefile {
 
 Savefile data;
 //  Extracts data from Output.txt and stores them in data.
-//  No input, no output
+//  Input: player name, output: stores data to global variables
 bool extractData(string name) {
     ifstream fin;
     fin.open(" [Game saved]  " + name + ".txt");
@@ -47,7 +47,7 @@ void typewriter2 (string line, int speed) {
     }
 }
 
-//  Slotmachine takes in your score and modifies it. This is a fun chance to double the score.
+//  Slotmachine takes in your score and modifies it. This is a fun chance to double player's score.
 
 void slotmachine (int &score) {
     system ("clear");
@@ -161,7 +161,7 @@ void slotmachine (int &score) {
 
 //  The menu for navigating games. Also has call to slotmachine
 //  Once 5 rounds are over, it will create an output file to store stats.
-
+// No input/output only changes global variables
 void Menu() {
     bool slot = false; 
     string gamechoice;
@@ -280,7 +280,8 @@ void Menu() {
 
 
 //  This function checks if there is existing save file of player.
-//  Gives player option to continue or start new game if savefile is found
+//  Gives player option to continue or start new game if savefile is found. 
+// No input/output, only reads/changes global variables
 int main() {
 
 
