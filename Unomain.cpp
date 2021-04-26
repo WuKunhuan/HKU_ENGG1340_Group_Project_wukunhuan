@@ -26,8 +26,8 @@
 
 using namespace std;
 
-//  Prints the cards given by number and suit (Takes in the rank of a card and its corresponding suit in terms of an integer)
-//  Also prints them out like a typewriter
+
+
 
 
 
@@ -41,7 +41,9 @@ void typewriter(string line, int speed) {
     }
 }
 
-
+// This function prints the playing cards with the symbol and rank
+//  Prints the cards given by number and suit (Takes in the rank of a card and its corresponding suit in terms of an integer)
+//  Also prints them out like a typewriter
 void PrintCard(int number, int suit) {
     cout.flush();
     switch (number) {
@@ -125,7 +127,6 @@ void PrintCard(int number, int suit) {
 }
 
 //  Prints out the cards in the player's hand by taking in the player's pile
-
 void PrintHand(vector<int> PlayerPile) {             //  print player's cards
     int count = 0;
     for (int i = 0; i < PlayerPile.size(); i++) {
@@ -935,7 +936,9 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
 
 
 
-
+// This function prints out the scoreboard after the round.
+// Takes in number of ais, achievements and the name of player and prints out a scoreboard.
+//  At the same time, have the file output for this round ready.
 void show_result (int numofai, int achievment[3], string name) {
 
     system ("clear");
@@ -989,8 +992,6 @@ void show_result (int numofai, int achievment[3], string name) {
 
 }
 
-//  After each round of the game, printing out the game scoreboard for the reference of users.
-//  At the same time, have the file output for this round ready.
 
 
 
@@ -998,6 +999,8 @@ void show_result (int numofai, int achievment[3], string name) {
 
 
 
+//  Print Rules of Crazy Eights
+//  No input, no return, only print
 void PrintRules() {
 
     cout << endl;
@@ -1017,12 +1020,12 @@ void PrintRules() {
     cout << "Enter anything to start...   "; string _enter;
     getline (cin, _enter); getline (cin, _enter); cout << endl;
 }
-//  Print Rules of Crazy Eights
-//  No input, no return, only print
 
 
 
 
+//  Main function for Crazy Eights. It gives option to read rules, start game and choose number of AI to play against
+//  Takes in player's name and their current score. No output
 int unomain(string name, int& playerscore) {
 
     string numofai, startchoice;
@@ -1154,5 +1157,4 @@ int unomain(string name, int& playerscore) {
     return 0;
 }
 
-//  Main function for Crazy Eights. It gives option to read rules, start game and choose number of AI to play against
-//  Takes in player's name and their current score. No output
+
