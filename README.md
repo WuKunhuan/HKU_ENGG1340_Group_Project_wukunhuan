@@ -1,6 +1,6 @@
 #    ENGG_1340-Group_Project
 
-##   ⭐️  Group members
+##   ⭐️  Group members (Group 50)
     Senthil Kumar Sapnesh   (3035790850)
     Wu Kunhuan              (3035771634)
 
