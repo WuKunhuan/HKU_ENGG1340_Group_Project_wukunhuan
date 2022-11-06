@@ -1,4 +1,4 @@
-#    ENGG_1340-Group_Project
+#    [HKU]  ENGG1340 Group Project
 
 ##   ⭐️  Group members (Group 50)
     Senthil Kumar Sapnesh   (3035790850)
