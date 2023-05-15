@@ -38,7 +38,7 @@ make MainMenu
 ```
 
 3. A terminal interface of the game will come up. 
-4. Follow the game instructions in the game for the normal operation. 
+4. Follow the instructions in the game. ENJOY YOURSELF and COMPETE WITH OTHERS! :)
 5. Always save the game progress to avoid loss of progress from accidental crashes. Please refer to the Sample Gamerun file for a better sense of how the game interface looks like. 
 
 Sometimes, if nothing is coming up in the game, just return one more blank line, and then it should be OK (the getline function sometimes let users to enter again in case the previous enter is nothing). Have fun with both subgames and try different game modes  :)
