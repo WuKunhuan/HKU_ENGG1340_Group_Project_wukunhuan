@@ -77,9 +77,6 @@ void typewriter_ (string line, int speed) {
 //  Input: a line of word
 //  Output: Screenoutput of that line
 
-
-
-
 void Show_result (int modechoice, int achievment[5], string name) {
 
     system ("clear");
@@ -90,6 +87,12 @@ void Show_result (int modechoice, int achievment[5], string name) {
 
     cout << endl;
     cout << " ========================================================== "                                                      << endl;
+    cout << "||"
+         << "                    24_Calculation                      "
+         << "||" << endl;
+    cout << "||"
+         << "                                                        "
+         << "||" << endl;
     cout << "||" << setw(20) << "  Game Mode: "       << setw(16) << "Calculate " << modechoice << " numbers"   << "           " << "||" << endl;
     cout << "||" << setw(20) << "  Correct #: "       << setw(16) << achievment[1]                           << "                    " << "||" << endl;
     cout << "||" << setw(20) << "  Time: "            << setw(12) << achievment[2] << setw(4) << " ms"       << "                    " << "||" << endl;
@@ -153,13 +156,6 @@ void Show_result (int modechoice, int achievment[5], string name) {
 //  Input: Game statistics
 //  Output: Screenoutput of the scoreboard
 
-
-
-
-
-
-
-
 int  Find_order  (char c, string &valid_information, bool &valid_not, bool &finish_not) {
     int  order;
     switch (c) {
@@ -210,14 +206,16 @@ int  Find_order2  (char c, string &valid_information, bool &valid_not, bool &fin
 //  Input: An operator, valid information
 //  Output: The order of that operator, possible changes in the valid information (pass by reference)
 
+void Do_Calculation (vector<char> &calculation_operator, int &calculation_operator_length, 
+    vector<float> &calculation_number, int &calculation_number_length, char next_operator, string &valid_information, bool &valid_not, bool &finish_not) {
 
-
-
-
-
-void Do_Calculation (vector<char> &calculation_operator, int &calculation_operator_length, vector<float> &calculation_number, int &calculation_number_length, char next_operator, string &valid_information, bool &valid_not, bool &finish_not) {
-
-    if (valid_not && calculation_number_length == 1) {valid_information = "There are too many operators in the expression! "; valid_not = false; finish_not = true; return; }
+    if (valid_not && calculation_number_length == 1 && !(calculation_operator.size() == 1 && calculation_operator[0] == ';')) {
+        // cout << endl; 
+        // for (int i = 0; i < calculation_operator.size(); i++) {
+        //     cout << calculation_operator[i]; 
+        // } cout << endl; 
+        valid_information = "There are too many operators in the expression! "; valid_not = false; finish_not = true; return; 
+    }
 
     char top_operator = calculation_operator.back();
 
@@ -289,10 +287,6 @@ void Do_Calculation (vector<char> &calculation_operator, int &calculation_operat
 //  Input: Stored operator and number vectors, valid information
 //  Output: Do the calculation and change the operators and numbers stored, possible changes in the valid information (pass by reference)
 
-
-
-
-
 string Valid_Checker2 (string calculation_player, bool &valid_not, string &valid_information, int branket_level) {
 
     if (valid_not) {
@@ -363,8 +357,6 @@ string Valid_Checker2 (string calculation_player, bool &valid_not, string &valid
 //  For example, when dealing with 3 + (2 * (5 + 4)) - 6, we will replace (2 * (5 + 4)) into a single float number. Then under this recursion (input expression is "2 * (5 + 4)"), we will replace (5 + 4) into a single float number 9, then we can replace (2 * 9) into 18 and return back one layer by one layer.
 //  Finally calculate 3 + 18 - 6, which will give us 15.
                 }
-
-
 
                 else {
                     if (a > b && valid_not)  {
@@ -442,10 +434,6 @@ string Valid_Checker2 (string calculation_player, bool &valid_not, string &valid
 //  This part is used to further check the calculation expression.
 //  Input: The modified calculation string of the player, valid information
 //  Output: The resulted calculation string of the player (result in 1 single float numbers if all right), possible changes in the valid information (pass by reference)
-
-
-
-
 
 void Valid_Checker1 (string &calculation_player, bool &valid_not, string &valid_information, int frequency[13]) {
 
@@ -533,11 +521,6 @@ void Valid_Checker1 (string &calculation_player, bool &valid_not, string &valid_
 //  Input: The calculation string of the player, valid information
 //  Output: The modified calculation string of the player (result in 1 single float numbers if all right), possible changes in the valid information (pass by reference)
 
-
-
-
-
-
 void PrintNumbers (vector<int> Givennumbers){
 
     if      (Givennumbers.size() == 4)    {cout << "||"; typewriter_  ("     Given numbers:             ", 100000); }
@@ -558,9 +541,8 @@ void PrintNumbers (vector<int> Givennumbers){
 //  Input: Given number questions
 //  Output: Screenoutput of the question
 
-
-
-void Startgame_ (int num_numbers, int achievment[4], int rounds, int &current_streak, int question_bank[18556]) {
+void StartQuestion(int num_numbers, int achievment[4], int rounds, int &current_streak, int question_bank[18556])
+{
 
     vector<int>  Givennumbers;
     int frequency[13] = {};
@@ -770,14 +752,6 @@ void Startgame_ (int num_numbers, int achievment[4], int rounds, int &current_st
 //  Input: Question mode, current rounds, current streak, question bank used
 //  Output: Screenoutput of the question
 
-
-
-
-
-
-
-
-
 int Startgame (string playername) {
 
     cout << endl;
@@ -800,17 +774,17 @@ int Startgame (string playername) {
 //  Choose the game mode: how many numbers to calculate
 
     while (modechoice != "1" && modechoice != "2" && modechoice != "3") {
-        cout << "Your option: " ;
-        getline (cin, modechoice);
-        cout << endl;
 
+        cout << "Your option: " ;
+        getline(cin, modechoice);
+
+        system("clear");
 
         if (modechoice == "1" || modechoice == "2" || modechoice == "3") {
             stringstream string_int;
             int int_modechoice;
             string_int << modechoice;
             string_int >> int_modechoice;
-            cout << endl;
             cout << " ========================================================== "                                << endl;
             cout << "||" << "                     24_Calculation                     "                            << "||"    << endl;
             cout << "||" << "                 Calculate  " << int_modechoice + 3 << "  numbers                  " << "||"    << endl;
@@ -833,7 +807,7 @@ int Startgame (string playername) {
 
             int question_bank[18556];
             for (rounds = 1; rounds <= 5; rounds++) {
-                Startgame_(4, achievment, rounds, current_streak, question_bank);
+                StartQuestion(4, achievment, rounds, current_streak, question_bank);
             }
 
 //  Do 5 questions in the 4-number mode
@@ -862,13 +836,12 @@ int Startgame (string playername) {
 
             int question_bank[18556];
             for (rounds = 1; rounds <= 5; rounds++) {
-                Startgame_(5, achievment, rounds, current_streak, question_bank);
+                StartQuestion(5, achievment, rounds, current_streak, question_bank);
             }
 
 //  Do 5 questions in the 5-number mode
 
             system ("clear");
-
             Show_result (5, achievment, name); break;
 
 //  Show the scoreboard
@@ -890,7 +863,7 @@ int Startgame (string playername) {
 
             int question_bank[18556];
             for (rounds = 1; rounds <= 5; rounds++) {
-                Startgame_(6, achievment, rounds, current_streak, question_bank);
+                StartQuestion(6, achievment, rounds, current_streak, question_bank);
             }
 
 //  Do 5 questions in the 6-number mode
@@ -917,13 +890,9 @@ int Startgame (string playername) {
 //  Input: Player's name
 //  Output: Manage the overall workflow of the 5 questions
 
-
-
-
-
-
 void Printrules ( ) {
-    cout << endl;
+
+    system("clear");
     cout << " ========================================================== "                << endl;
     cout << "||" << "                Rules of 24_Calculation                 " << "||"    << endl;
     cout << "||" << "                                                        " << "||"    << endl;
@@ -943,12 +912,6 @@ void Printrules ( ) {
 //  Input: None
 //  Output: Screenoutput of the game rules
 
-
-
-
-
-
-
 int _24Cal_main (string &playername, int &playerscore) {
 
     system ("clear");
@@ -959,83 +922,64 @@ int _24Cal_main (string &playername, int &playerscore) {
     cout << "||" << "  Enter 2:  Read rules and Play                         " << "||"    << endl;
     cout << " ========================================================== "                << endl;
 
-    string _enter; getline (cin, _enter);
+    string _enter;
 
     string startchoice = "1";
     cout << "Your option: " ;
     getline (cin, startchoice);
 
-        while (startchoice != "1" && startchoice != "2") {
-            cout << endl << "Sorry, " << startchoice << " is an invalid option. Please enter 1 or 2" << endl;
-            cout << "Your option: " ;
-            getline (cin, startchoice);
-        }
+    while (startchoice != "1" && startchoice != "2")
+    {
+        cout << endl
+             << "Sorry, " << startchoice << " is an invalid option. Please enter 1 or 2" << endl;
+        cout << "Your option: ";
+        getline(cin, startchoice);
+    }
 
+    if (startchoice == "2")
+    {
+        Printrules();
+    }
 
+    if (startchoice == "1" || startchoice == "2")
+    {
 
-        if (startchoice == "1")      {
+        system("clear");
 
-               system ("clear");
+        cout << " ========================================================== " << endl;
+        cout << "||";
+        typewriter_("  Before this round the score is:    ", 100000);
+        cout << setw(5) << playerscore << "              "
+             << "||" << endl;
+        cout << " ========================================================== " << endl;
+        string _enter;
+        usleep(1000000);
+        cout << "Enter anything to continue...   ";
+        getline(cin, _enter);
+        cout << endl
+             << endl;
 
-               cout << " ========================================================== "                << endl;
-               cout << "||";
-               typewriter_ ("  Before this round the score is:    ", 100000);
-               cout << setw(5) << playerscore << "              " << "||"    << endl;
-               cout << " ========================================================== "                << endl;
-               string _enter;
-               usleep (1000000);
-               cout << "Enter anything to continue...   ";
-               getline (cin, _enter); cout << endl << endl;
+        playerscore += Startgame(playername);
 
-               playerscore += Startgame (playername);
+        system("clear");
 
-               system ("clear");
-
-               cout << " ========================================================== "                << endl;
-               cout << "||";
-               typewriter_ ("  After this round the score is:    ", 100000);
-               cout << setw(5) << playerscore << "               " << "||"    << endl;
-               cout << " ========================================================== "                << endl;
-               usleep (1000000);
-               cout << "Enter anything to continue...   ";
-               getline (cin, _enter); cout << endl << endl;
-
-               }
-
-//  Display the total accumulated score for the main menu before and after this game.
-
-        else if (startchoice == "2") {
-               Printrules( );
-
-               system ("clear");
-               cout << " ========================================================== "                << endl;
-               cout << "||";
-               typewriter_ ("  Before this round the score is:    ", 100000);
-               cout << setw(5) << playerscore << "              " << "||"    << endl;
-               cout << " ========================================================== "                << endl;
-               string _enter;
-               usleep (1000000);
-               cout << "Enter anything to continue...   ";
-               getline (cin, _enter); cout << endl << endl;
-
-
-               playerscore += Startgame (playername);
-
-               system ("clear");
-               cout << " ========================================================== "                << endl;
-               cout << "||";
-               typewriter_ ("  After this round the score is:    ", 100000);
-               cout << setw(5) << playerscore << "               " << "||"    << endl;
-               cout << " ========================================================== "                << endl;
-               usleep (1000000);
-               cout << "Enter anything to continue...   ";
-               getline (cin, _enter); cout << endl << endl;
+        cout << " ========================================================== " << endl;
+        cout << "||";
+        typewriter_("  After this round the score is:    ", 100000);
+        cout << setw(5) << playerscore << "               "
+             << "||" << endl;
+        cout << " ========================================================== " << endl;
+        usleep(1000000);
+        cout << "Enter anything to continue...   ";
+        getline(cin, _enter);
+        cout << endl
+             << endl;
+    }
 
 //  Display the total accumulated score for the main menu before and after this game.
 
-        }
-
-        cout << endl << endl;
+    cout << endl
+         << endl;
 
     cout << " ========================================================== "                << endl;
     cout << "||" << "     Round over, thanks for playing 24_Calculation!     " << "||"    << endl;

@@ -152,8 +152,6 @@ void PrintHand(vector<int> PlayerPile) {             //  print player's cards
     cout << endl;
 }
 
-
-
 //  Checks if a card played by player and AI is valid or not
 //  Takes in the card played by player and top card on deck. Outputs true if valid and false otherwise
 bool ValidChecker(int& card, int firstcard) {
@@ -162,7 +160,9 @@ bool ValidChecker(int& card, int firstcard) {
     int number = card % 13;
     int suit = card / 13;
     if (number == 7) {
-        int wildsuit;
+
+        int wildsuit = 0;
+        string wildsuit_str = ""; 
 
         cout << " ========================================================== "                << endl;
         cout << "||" << "  You have played a WILD CARD                           " << "||"    << endl;
@@ -170,9 +170,16 @@ bool ValidChecker(int& card, int firstcard) {
         cout << "||" << "  0 for SPADES          1 for HEARTS                    " << "||"    << endl;
         cout << "||" << "  2 for CLUBS           3 for DIAMONDS                  " << "||"    << endl;
         cout << " ========================================================== "                << endl;
+        
         cout << "Your choice: ";
-        cin >> wildsuit;
-        wildsuit = wildsuit % 4;
+        getline(cin, wildsuit_str);
+        while (wildsuit_str != "0" && wildsuit_str != "1" && wildsuit_str != "2" && wildsuit_str != "3") {
+            cout << endl << "Invalid suit. Please enter a number between 0 and 3. " << endl; 
+            cout << "Your choice: ";
+            getline(cin, wildsuit_str);
+        }
+
+        wildsuit = wildsuit_str[0] - '0'; 
         card = wildsuit * 13 + firstcardnum;
 
         if      (wildsuit == 0) {cout << "The suit has been changed into: SPADES!   "   << endl << endl; }
@@ -196,47 +203,142 @@ bool ValidChecker(int& card, int firstcard) {
     }
 }
 
-
-
-
-
 //  This function deals with the cards played by AIs. Checks if AI has any valid cards to play
 //  Takes in firstcard and the AI's cards pile. Outputs true if a valid card has been player and false otherwise
 bool AI (int& firstcard, vector<int>& aiPile, string AI_id) {
-    int firstcardnum = firstcard % 13, firstcardsuit = firstcard / 13;
-    srand (time(NULL));
-    int random = rand() % 2;
-    if (random == 1) {
-        reverse(aiPile.begin(), aiPile.end());
+
+    // AI re-arranges its card to put the suits in order
+    // AI counts and finds the most suit it has
+    int cardcount[4] = {0, 0, 0, 0}; 
+    vector<int> AI_SPADES; 
+    vector<int> AI_HEARTS; 
+    vector<int> AI_CLUBS; 
+    vector<int> AI_DIAMONDS; 
+    for (int card = 0; card < aiPile.size(); card++) {
+        if (aiPile[card] / 13 == 0) {
+            AI_SPADES.push_back(aiPile[card]); 
+        }
+        if (aiPile[card] / 13 == 1) {
+            AI_HEARTS.push_back(aiPile[card]); 
+        }
+        if (aiPile[card] / 13 == 2) {
+            AI_CLUBS.push_back(aiPile[card]); 
+        }
+        if (aiPile[card] / 13 == 3) {
+            AI_DIAMONDS.push_back(aiPile[card]); 
+        }
+        if (aiPile[card] % 13 != 7) {
+            cardcount[aiPile[card] / 13] += 1; 
+        }
+    }
+    // Bubble sort, Reverse order
+    int suits[4] = {0, 1, 2, 3}; 
+    for (int p = 0; p < 3; p++){
+        for (int q = 0; q < 3 - p; q++) {
+            if (cardcount[q] < cardcount[q+1]) {
+                int temp = 0; 
+                temp = cardcount[q]; 
+                cardcount[q] = cardcount[q+1]; 
+                cardcount[q+1] = temp; 
+                temp = suits[q]; 
+                suits[q] = suits[q+1]; 
+                suits[q+1] = temp; 
+            }
+        }
     }
 
+    // AI re-arranges its card to put the most suit it has in the beginning
+    // Try to play those cards first
+    aiPile.clear(); 
+    for (int s = 0; s < 4; s++) {
+        if (suits[s] == 0) {
+            // cout << endl << "AI SPADES: "; 
+            for (int i = 0; i < AI_SPADES.size(); i++) {
+                aiPile.push_back(AI_SPADES[i]); 
+                // cout << AI_SPADES[i] << " "; 
+            }
+        }
+        if (suits[s] == 1) {
+            // cout << endl << "AI HEARTS: "; 
+            for (int i = 0; i < AI_HEARTS.size(); i++) {
+                aiPile.push_back(AI_HEARTS[i]); 
+                // cout << AI_HEARTS[i] << " "; 
+            }
+        }
+        if (suits[s] == 2) {
+            // cout << endl << "AI CLUBS: "; 
+            for (int i = 0; i < AI_CLUBS.size(); i++) {
+                aiPile.push_back(AI_CLUBS[i]); 
+                // cout << AI_CLUBS[i] << " "; 
+            }
+        }
+        if (suits[s] == 3) {
+            // cout << endl << "AI DIAMONDS: "; 
+            for (int i = 0; i < AI_DIAMONDS.size(); i++) {
+                aiPile.push_back(AI_DIAMONDS[i]); 
+                // cout << AI_DIAMONDS[i] << " "; 
+            }
+        }
+    }
+    // cout << endl << "AI SUITS: "; 
+    for (int i = 0; i < (sizeof(suits)/sizeof(int)); i++) {
+        // cout << suits[i] << " "; 
+    }
+    // cout << endl << "AI CARDCOUNT: "; 
+    for (int i = 0; i < (sizeof(cardcount)/sizeof(int)); i++) {
+        // cout << cardcount[i] << " "; 
+    }
+    // cout << endl << endl; 
+    // usleep(3000000); 
+
+    // AI re-arranges its card to put all eights to the back
+    // Only play them when no other card can be played
+    vector<int> non_eights; 
+    vector<int> eights; 
     for (int i = 0; i < aiPile.size(); i++) {
+        if (aiPile[i] % 13 == 7) {eights.push_back(aiPile[i]); }
+        else {non_eights.push_back(aiPile[i]); }
+    } 
+    aiPile.clear(); 
+    for (int i = 0; i < non_eights.size(); i++) {
+        aiPile.push_back(non_eights[i]); 
+    }
+    for (int i = 0; i < eights.size(); i++) {
+        aiPile.push_back(eights[i]); 
+    }
+
+    int firstcardnum = firstcard % 13, firstcardsuit = firstcard / 13;
+
+    for (int i = 0; i < aiPile.size(); i++) {
+
         int number, suit;
         number = aiPile[i] % 13;
         suit = aiPile[i] / 13;
+
         if (number == firstcardnum || number == 7) {
+
             if (number != 7) {
-                typewriter ("AI_" + AI_id + " plays: ", 100000);
+                typewriter ("AI_" + AI_id + " has played: ", 100000);
                 PrintCard (number, suit);
                 firstcard = aiPile[i];
                 aiPile.erase(aiPile.begin() + i);
                 cout << endl;
                 usleep (1000000);
-                cout << "AI_" + AI_id + " has " << aiPile.size() << " cards left" << endl;
-                usleep (1000000);
-                return true;
             }
 
             else {
+
                 typewriter ("AI_" + AI_id + " plays: ", 100000);
                 PrintCard (number, suit);
                 cout << endl;
                 usleep (1000000);
-                cout << "AI_" + AI_id + " has played a WILD CARD. IT has chosen the suit: "; usleep (1000000);
-                int wildsuit = rand() % 4;
-                while (wildsuit == firstcardsuit) {
-                    wildsuit = rand() % 4;
-                }
+                cout << "AI_" + AI_id + " has played a WILD CARD. IT has chosen the suit: "; 
+                usleep (1000000);
+
+                // AI plays a while card
+                // AI chooses the most suit it has
+                int wildsuit = suits[0]; 
+
                 switch (wildsuit) {
                 case 0:
                     cout << "SPADES" << endl;
@@ -260,28 +362,48 @@ bool AI (int& firstcard, vector<int>& aiPile, string AI_id) {
 
                 firstcard = wildsuit * 13 + firstcardnum;
                 aiPile.erase(aiPile.begin() + i);
-                usleep (1000000);
-                cout << "AI_" + AI_id + " has " << aiPile.size() << " cards left" << endl;
-                usleep (1000000);
-                return true;
+                usleep (1000000); 
             }
+            cout << "AI_" + AI_id + " has " << aiPile.size() << " card";
+            if (aiPile.size() >= 2) {cout << "s"; }
+            cout << " left. " << endl;
+            usleep (1000000);
+            return true;
         }
+
         else if (suit == firstcardsuit) {
-            typewriter ("AI_" + AI_id + " plays: ", 100000);
+            typewriter ("AI_" + AI_id + " has played: ", 100000);
             PrintCard (number, suit);
             firstcard = aiPile[i];
             aiPile.erase(aiPile.begin() + i);
             cout << endl;
             usleep (1000000);
-            cout << "AI_" + AI_id + " has " << aiPile.size() << " cards left" << endl;
+            cout << "AI_" + AI_id + " has " << aiPile.size() << " card";
+            if (aiPile.size() >= 2) {cout << "s"; }
+            cout << " left. " << endl;
             usleep (1000000);
             return true;
         }
     }
+
     cout.flush();
     usleep (50000);
     cout.flush();
     return false;
+}
+
+// Check whether the input is an integer
+int checkInteger(string num) {
+    if (num == "") {return false; }
+    if (num[0] == '-') {
+        num = num.substr(1, num.length() - 1); 
+        if (num == "") {return false; }
+    }
+    for (int i = 0; i < num.length(); i++) {
+        if (num[i] < '0' || num[i] > '9') {
+            return false; 
+        }
+    } return true; 
 }
 
 //  Starts a new game of Crazy Eights. Handles each player's turn of playing a card and drawing a card
@@ -292,8 +414,6 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
 
     vector<int> PlayerPile, aiPile, aiPile2;
     int DrawPile[52], card;
-
-
 
     for (int i = 0; i < 52; i++) {       //  Creating draw pile
         DrawPile[i] = i;
@@ -356,9 +476,9 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
     cout << "" << "||" << endl;
     cout <<    " ======================== " << endl;
     usleep (1000000);
-    cout << " =================== "                << endl;
-    cout << "||" << "  Deck size: " << setw(2) << 52 - drawcount << "  " << "||" << endl;
-    cout << " =================== "                << endl;
+    cout << " ==================== "                << endl;
+    cout << "||" << "  Deck size:  " << setw(2) << 52 - drawcount << "  " << "||" << endl;
+    cout << " ==================== "                << endl;
     usleep (1000000);
     cout << " ========================================================== "                << endl;
     cout << "||" << "                    It is YOUR turn!                    " << "||"    << endl;
@@ -366,7 +486,6 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
     usleep (1000000);
     cout << endl;
     card = firstcard;
-
 
     int cardindex; string _trash;
 
@@ -383,19 +502,42 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
         cout << "||" << "  enter -1 to draw a card from the Draw pile            " << "||"    << endl;
         cout << " ========================================================== "                << endl;
 
+        string cardindex_string = ""; 
+
         cout << "Your choice: ";
-        cin >> cardindex;
-        if (cin.fail()) {cardindex = 0; getline (cin, _trash); }
+        while (cardindex_string == "") {
+            getline(cin, cardindex_string); 
+        }
+
+        while (!checkInteger(cardindex_string)) {
+            cout << endl << "Sorry, Please enter -1 or a number between 0 and " << PlayerPile.size() - 1 << endl;
+            cout << "Your choice: ";
+            cardindex_string = ""; 
+            while (cardindex_string == "") {
+                getline(cin, cardindex_string); 
+            }
+        }
+
+        stringstream s; 
+        s << cardindex_string; 
+        s >> cardindex; 
+
         if (cardindex != -1) {
+
             card = PlayerPile[cardindex];
             bool notdraw = true;
             while (!ValidChecker(card, firstcard)) {
+
                 if (cardindex != -1) {
 
                     cout << " ========================================================== "                << endl;
                     cout << "||";
-                    PrintCard(card % 13, card / 13);
-                    cout << " is an invalid card. Please choose another to play  " << "||"    << endl;
+                    if (cardindex >= 0 && cardindex <= PlayerPile.size() - 1) {
+                        PrintCard(card % 13, card / 13);
+                        cout << " is an invalid card. Please choose another to play  " << "||"    << endl;
+                    } else {
+                        cout << " The card id doesn't exist, please choose a valid id" << "||"    << endl;
+                    }
                     cout << " ========================================================== "                << endl;
                     cout << "Your choice: ";
                     cin >> cardindex;
@@ -417,17 +559,16 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
 
                     cout << endl << endl;
 
-                    drawcount += 1;
-                    cout << " =================== "                << endl;
-                    cout << "||" << "  Deck size: " << setw(2) << 52 - drawcount << "  " << "||" << endl;
-                    cout << " =================== "                << endl << endl;
-                    usleep (2000000);
-
                     notdraw = false;
                     break;
                 }
             }
             if (notdraw) {
+                if (PlayerPile[cardindex] % 13 != 7) {
+                    cout << "You have played: ";
+                    PrintCard (PlayerPile[cardindex] % 13, PlayerPile[cardindex] / 13); 
+                    usleep (2000000);
+                }
                 PlayerPile.erase(PlayerPile.begin() + cardindex);
                 firstcard = card;
             }
@@ -446,15 +587,7 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
             usleep (2000000);
 
             cout << endl << endl;
-
-            drawcount += 1;
-            cout << " =================== "                << endl;
-            cout << "||" << "  Deck size: " << setw(2) << 52 - drawcount << "  " << "||" << endl;
-            cout << " =================== "                << endl;
-
-
         }
-
 
         if (PlayerPile.size() == 0) {                            //  Win conditions
             win = true;
@@ -581,49 +714,38 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
 
         }
 
-
-
-
-
-
+        //  The game comes to AI_1's turn
 
         system ("clear");
 
         cout << " ==================== " << endl;
         cout << "||";
         typewriter("  Top card is ", 100000);
-        PrintCard(firstcard % 13, firstcard / 13);
+        PrintCard (firstcard % 13, firstcard / 13);
         cout << "" << "||" << endl;
         cout << " ==================== " << endl;
         usleep (1000000);
-        cout << " =================== "                << endl;
-        cout << "||" << "  Deck size: " << setw(2) << 52 - drawcount << "  " << "||" << endl;
-        cout << " =================== "                << endl;
+        cout << " ==================== "                << endl;
+        cout << "||" << "  Deck size:  " << setw(2) << 52 - drawcount << "  " << "||" << endl;
+        cout << " ==================== "                << endl;
         usleep (1000000);
         cout << " ========================================================== "                << endl;
         cout << "||" << "                   It is AI_1's turn!                   " << "||"    << endl;
         cout << " ========================================================== "                << endl;
         usleep (1000000);
 
-//  The game comes to AI_1's turn
-
-
         if (!AI(firstcard, aiPile, "1")) {        //  AI_1 draws card
             card = rand() % 52;
             while (DrawPile[card] == -1) {
                 card = rand() % 52;
             }
-
             aiPile.push_back(card);
-
             DrawPile[card] = -1;
-            cout << "AI_1 drew a card" << endl;
+            cout << "AI_1 drew a card. " << endl;
             usleep (1000000);
-            cout << "AI_1 has " << aiPile.size() << " cards left" << endl;
+            cout << "AI_1 has " << aiPile.size() << " cards left. " << endl;
             drawcount += 1;
-        }
-        usleep (1000000);
-
+        } usleep (1000000);
 
         if (aiPile.size() == 0) {
             win = true;
@@ -634,7 +756,7 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
             achievment[1] = drawcount;
             achievment[2] = 0;
             cout << " ========================================================== "      << endl;
-            cout << "||" << "  AI_1 wins as it have played all of its cards!" << "         " << "||" << endl;
+            cout << "||" << "  AI_1 wins as it has played all of its cards! " << "         " << "||" << endl;
             cout << " ========================================================== "      << endl;
             usleep(3000000);
             cout << "Enter anything to continue...   ";
@@ -750,9 +872,9 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
             cout << "" << "||" << endl;
             cout << " ==================== " << endl;
             usleep (1000000);
-            cout << " =================== "                << endl;
-            cout << "||" << "  Deck size: " << setw(2) << 52 - drawcount << "  " << "||" << endl;
-            cout << " =================== "                << endl;
+            cout << " ==================== "                << endl;
+            cout << "||" << "  Deck size:  " << setw(2) << 52 - drawcount << "  " << "||" << endl;
+            cout << " ==================== "                << endl;
             usleep (1000000);
             cout << " ========================================================== "                << endl;
             cout << "||" << "                   It is AI_2's turn!                   " << "||"    << endl;
@@ -770,7 +892,7 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
                 DrawPile[card] = -1;
                 cout << "AI_2 drew a card" << endl;
                 usleep (1000000);
-                cout << "AI_2 has " << aiPile2.size() << " cards left" << endl;
+                cout << "AI_2 has " << aiPile2.size() << " cards left. " << endl;
                 drawcount += 1;
             }
             usleep (1000000);
@@ -784,7 +906,7 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
                 achievment[1] = drawcount;
                 achievment[2] = 0;
                 cout << " ========================================================== "      << endl;
-                cout << "||" << "  AI_2 wins as it have played all of its cards!" << "         " << "||" << endl;
+                cout << "||" << "  AI_2 wins as it has played all of its cards! " << "         " << "||" << endl;
                 cout << " ========================================================== "      << endl;
                 usleep(3000000);
                 cout << "Enter anything to continue...   ";
@@ -902,39 +1024,24 @@ int StartGame (int numofai, string name, int achievment[3]) {       //Starts the
         cout << " ==================== " << endl;
         cout << "||";
         typewriter("  Top card is ", 100000);
-        PrintCard(firstcard % 13, firstcard / 13);
+        PrintCard (firstcard % 13, firstcard / 13);
         cout << "" << "||" << endl;
         cout << " ==================== " << endl;
         usleep (1000000);
-        cout << " =================== "                << endl;
-        cout << "||" << "  Deck size: " << setw(2) << 52 - drawcount << "  " << "||" << endl;
-        cout << " =================== "                << endl;
+        cout << " ==================== "                << endl;
+        cout << "||" << "  Deck size:  " << setw(2) << 52 - drawcount << "  " << "||" << endl;
+        cout << " ==================== "                << endl;
         usleep (1000000);
         cout << " ========================================================== "                << endl;
         cout << "||" << "                    It is YOUR turn!                    " << "||"    << endl;
         cout << " ========================================================== "                << endl;
         usleep (1000000);
 
-//  The game comes to your turn
+        //  The game comes to your turn
 
     }                                                                 //  End of while game loop
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // This function prints out the scoreboard after the round.
 // Takes in number of ais, achievements and the name of player and prints out a scoreboard.
@@ -950,6 +1057,8 @@ void show_result (int numofai, int achievment[3], string name) {
     cout << endl;
 
     cout << " ========================================================== "                                                   << endl;
+    cout << "||" << "                     Crazy Eights                       " << "||" << endl;
+    cout << "||" << "                                                        " << "||" << endl;
     cout << "||" << setw(20) << "  Game Mode: "       << setw(12) << numofai << " AIs"                      << "                    " << "||" << endl;
     cout << "||" << setw(20) << "  Cards remained: "      << setw(16) << 52 - achievment[1]                 << "                    " << "||" << endl;
 
@@ -984,26 +1093,17 @@ void show_result (int numofai, int achievment[3], string name) {
     fout << endl << endl;
     fout.close();
 
-
-    string _enter; getline (cin, _enter);
     cout << "Enter anything to end this round...   ";
-    getline (cin, _enter);
+    string _enter; getline (cin, _enter);
     cout << endl << endl;
 
 }
-
-
-
-
-
-
-
 
 //  Print Rules of Crazy Eights
 //  No input, no return, only print
 void PrintRules() {
 
-    cout << endl;
+    system ("clear");
     cout << " ========================================================== "                << endl;
     cout << "||" << "                 Rules of Crazy Eights                  " << "||"    << endl;
     cout << "||" << "                                                        " << "||"    << endl;
@@ -1020,9 +1120,6 @@ void PrintRules() {
     cout << "Enter anything to start...   "; string _enter;
     getline (cin, _enter); getline (cin, _enter); cout << endl;
 }
-
-
-
 
 //  Main function for Crazy Eights. It gives option to read rules, start game and choose number of AI to play against
 //  Takes in player's name and their current score. No output

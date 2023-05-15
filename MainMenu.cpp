@@ -183,10 +183,13 @@ void Menu() {
         cout << " ========================================================== "      << endl;
         cout << "Your choice: ";
 
-        cin >> gamechoice;
-        cout << endl << endl << endl;
+        getline(cin, gamechoice);
 
         if (gamechoice == "1") {
+
+            cout << endl
+                 << "Entering the Crazy Eights ..." << endl;
+            usleep(1000000);
 
             ofstream fout;
             fout.open(" [Game result]  " + name + ".txt", ios::app);
@@ -199,7 +202,12 @@ void Menu() {
             rounds += 1; if (rounds == 3 || rounds == 5) {slot = true; }
 
         }
+
         else if (gamechoice == "2") {
+
+            cout << endl
+                 << "Entering the 24 Calculation ..." << endl;
+            usleep(1000000);
 
             ofstream fout;
             fout.open(" [Game result]  " + name + ".txt", ios::app);
@@ -212,10 +220,6 @@ void Menu() {
             rounds += 1; if (rounds == 3 || rounds == 5) {slot = true; }
 
         }
-
-
-
-
 
         else if (gamechoice == "3") {
             cout << " Name: " << name << "   Round: " << rounds << "   Score: " << score << endl;
@@ -232,9 +236,16 @@ void Menu() {
             break;
         }
 
-        else {cout << endl << "Sorry, " << gamechoice << " is an invalid option. Please enter 1, 2 or 3" << endl; }
+        else
+        {
+            cout << endl
+                 << "Sorry, "
+                 << gamechoice << " is an invalid option. Please enter 1, 2 or 3" << endl;
+            usleep(1000000);
+        }
 
-        if ((rounds == 3 || rounds == 5) && slot) {
+        if ((rounds == 3 || rounds == 5) && slot && (gamechoice == "1" || gamechoice == "2"))
+        {
             slot = false; 
             slotmachine(score);
         }
@@ -272,9 +283,8 @@ void Menu() {
 
     }
 
-    string choice; getline (cin, choice);
     cout << "Enter anything to quit ... ";
-    getline (cin, choice);
+    string choice;  getline (cin, choice);
     system ("clear");
 }
 
