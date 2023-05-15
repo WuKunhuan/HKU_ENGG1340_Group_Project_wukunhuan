@@ -25,7 +25,7 @@ After Round 2 and Round 4, players will play a Slot Machine which gives them a c
 
 After 5 rounds, a file with title starting with [Game result] then with the player's name will be created with their performance of the game that they played. Before each round, the player can also choose to save his or her game progress, and enter it again in the future.
 
-https://github.com/WuKunhuan/HKU_ENGG1340_Group_Project/assets/79775708/18daa8f7-1894-4dea-a407-670024314ab3
+https://github.com/WuKunhuan/HKU_ENGG1340_Group_Project/Demo_Video
   
 ## 3. Compilation and Execution Instructions
    
