@@ -103,7 +103,7 @@ Form an expression with all the given value of each playing card using +, -, \*,
 
 -  A complete round consists of 5 questions. Points from each question will be accumulated to have the final point for the round, this means the maximum score available for a single round is 20 * 5 = 100. When the round is finished a scoreboard will be displayed at the end, consisting the overall score and the overall grade for the round. 
 
--  Bonus points will be available for specific achievements in this game, for example:
+-  Bonus points will be available for specific achievements in this game (UPCOMING FEATURE). For example:
 ①  The player has finished questions correctly within a specific time
 ②  The player has finished questions correctly continuously for at least 3 times
 ③  The player has finished questions correctly within a specific time continuously for at least 3 times
